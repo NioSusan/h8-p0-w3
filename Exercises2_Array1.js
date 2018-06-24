@@ -42,3 +42,48 @@ console.log(balikString("hello world!"));
         Twelfth iteration:  i = 1 - 1 = 0,         baru = "!dlrow olle" + "h" = "!dlrow olleh"
     End of the FOR Loop
  */
+
+ /* solution 2 using for ... of*/
+function balikString(str){
+
+    var letter ="";
+    for(var char of str){
+        letter = char + letter;
+    }
+    return letter;
+}
+  
+console.log(balikString("hello world!"));
+
+/* solution 3 using pop()*/
+function balikString(str){
+    var letters= str.split("");//this is the stack
+    var rword ="";
+    for(var i=0;i<str.length;i++){
+        rword += letters.pop();
+    }  
+    
+   return rword;
+}
+  
+console.log(balikString("hello world!"));
+
+/* Solution 4 using forEach() */
+function balikString(str){
+    var revString=""
+    str.split("").forEach(function(char){
+      revString = char + revString;
+    });
+    return revString;
+}
+  
+console.log(balikString("hello world!"));
+
+/* solution 5 using reduce() */
+function balikString(str){
+    return str.split("").reduce(function(revString,char){
+      return char + revString;
+    }, "");
+}
+  
+console.log(balikString("hello world!"));
