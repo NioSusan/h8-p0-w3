@@ -70,3 +70,32 @@ drawThreeColsBox(1);
 //   }
 //   console.log(result);
 // }
+
+/* =================================================================== */
+//Solution 4 - Using Array
+function drawThreeColsBox(num){
+  var result=[];
+  var box=[];
+  for(var i=1;i<=num*3;i++){
+    box.push(i);
+    if(box.length===3){
+      result.push(box);
+      box=[];
+    }
+  }
+  return result;
+}
+
+console.log(drawThreeColsBox(3));
+/* 
+[ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ]
+ */
+console.log(drawThreeColsBox(5));
+/* 
+[ [ 1, 2, 3 ],
+  [ 4, 5, 6 ],
+  [ 7, 8, 9 ],
+*/
+
+console.log(drawThreeColsBox(1));
+//[ [ 1, 2, 3 ] ]
